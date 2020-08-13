@@ -1,0 +1,41 @@
+{
+  "name": "next.local",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "schema": "apollo-codegen introspect-schema ${GRAPHQL_URL} --output schema.json",
+    "schema:generate": "apollo-codegen generate queries/**/*.ts --schema schema.json --target typescript --output types/graphql-types.ts"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.1.3",
+    "@reduxjs/toolkit": "^1.4.0",
+    "@types/graphql": "^14.5.0",
+    "@types/react": "^16.9.43",
+    "@types/react-bootstrap": "^0.32.22",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-redux": "^7.1.9",
+    "@types/redux": "^3.6.0",
+    "@types/redux-logger": "^3.0.8",
+    "@types/underscore": "^1.10.21",
+    "apollo": "^2.30.2",
+    "apollo-codegen": "^0.20.2",
+    "bootstrap": "^4.5.2",
+    "graphql": "^15.3.0",
+    "next": "9.5.0",
+    "react": "16.13.1",
+    "react-bootstrap": "^1.3.0",
+    "react-dom": "16.13.1",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "sass": "^1.26.10",
+    "underscore": "^1.10.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.27",
+    "typescript": "^3.9.7"
+  }
+}

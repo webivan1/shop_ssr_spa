@@ -1,0 +1,6 @@
+.navbar-brand {
+  font-weight: bolder;
+  & > span {
+    margin-right: 2px;
+  }
+}
