@@ -1,0 +1,5 @@
+type Seo {
+    title: String!
+    description: String
+    keywords: String
+}

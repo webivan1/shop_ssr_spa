@@ -1,0 +1,12 @@
+type Query {
+    categories: [CategoryList!]!
+    category(slug: String! @where(operator: "like")): Category @find
+
+    products(categoryId: Int!, priceFrom: Float, priceTo: Float, search: String): [ProductList!]!
+        @paginate(defaultCount: 30, builder: "App\\Entities\\ProductList@getListBuilder")
+    product(slug: String! @where(operator: "like")): Product @find
+}
+
+#import category.graphql
+#import product.graphql
+#import seo.graphql

@@ -1,15 +1,16 @@
 import {
-  Categories_categories
+  CategoryList_categories,
+  CategoryList
 } from '../../types/graphql-types'
 
-export type CategoryItemType = Categories_categories & {
+export type CategoryItemType = CategoryList_categories & {
   children?: CategoryItemType[];
   visible: boolean;
 }
 
-export type CategoryListType = {
+export type CategoryListType = CategoryList & {
   categories: CategoryItemType[];
-}
+};
 
 export type CategoryListStateType = {
   categories: CategoryItemType[];

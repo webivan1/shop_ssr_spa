@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'paths' => ['*'],
+    'paths' => ['api/*', 'graphql'],
     'allowed_methods' => ['GET', 'POST'],
     'allowed_origins' => explode(',', env('ALLOW_API_URL', '*')),
     'allowed_origins_patterns' => [],

@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
 export const CATEGORIES_LIST = gql`
-    query Categories {
+    query CategoryList {
         categories {
             id
             heading

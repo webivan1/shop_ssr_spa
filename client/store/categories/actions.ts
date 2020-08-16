@@ -25,16 +25,16 @@ export const fetchAllCategoriesAsync = (): AppThunk => async (dispatch) => {
 export function categoryToTree(categories: CategoryItemType[], parent?: CategoryItemType): CategoryItemType[] {
   let tree: CategoryItemType[] = categories.filter(item => {
     if (parent) {
-      return item.parent_id === parent.id;
+      return item.parent_id === +parent.id;
     } else {
-      return !categories.some(({ id }) => id === item.parent_id)
+      return !categories.some(({ id }) => +id === item.parent_id)
     }
   });
 
   tree = tree.map(item => {
     let children: CategoryItemType[] = [];
 
-    if (categories.some(({ parent_id }) => parent_id === item.id)) {
+    if (categories.some(({ parent_id }) => parent_id === +item.id)) {
       children = categoryToTree(categories, item);
     }
 

@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client'
 
 export const CATEGORY_DETAIL = gql`
-    query CategoryDetail($slug: String) {
-        categoryDetail(slug: $slug) {
+    query Category($slug: String!) {
+        category(slug: $slug) {
             id
             heading
             slug

@@ -20,6 +20,8 @@ class Category extends Model
 {
     use NodeTrait;
 
+    public $table = 'categories';
+
     protected $fillable = [
         'id', 'heading', 'slug', 'content', 'sortable', '_rgt', '_lft', 'parent_id'
     ];

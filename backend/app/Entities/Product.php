@@ -22,6 +22,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Product extends Model
 {
+    public $table = 'products';
+
     protected $fillable = [
         'category_id', 'heading', 'slug', 'title', 'description', 'keywords', 'content', 'quantity', 'price', 'price_old'
     ];

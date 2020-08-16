@@ -8,7 +8,9 @@ import { CategoryDetailStateType } from '../../store/category/types'
 import { isString } from '../../helpers'
 import { http } from '../../http/http'
 import { NextPage } from 'next'
-import { Alert, Spinner } from 'react-bootstrap'
+import { Alert, Spinner, Row, Col } from 'react-bootstrap'
+import { CategoryChildren } from "../../components/Categories/CategoryChildren";
+import { ProductList } from "../../components/Categories/Products/ProductList";
 
 const CategoryItem: NextPage<CategoryDetailStateType> = (serverProps) => {
 
@@ -43,6 +45,15 @@ const CategoryItem: NextPage<CategoryDetailStateType> = (serverProps) => {
           <h1 className="mb-4">{category.heading}</h1>
 
           <p>{category.content}</p>
+
+          <Row className="mt-5">
+            <Col md={3} sm={6} xs={12}>
+              {category.children ? <CategoryChildren children={category.children} /> : null}
+            </Col>
+            <Col md={9} sm={6} xs={12}>
+              <ProductList />
+            </Col>
+          </Row>
         </>
       )}
     </Layout>
@@ -61,7 +72,7 @@ CategoryItem.getInitialProps = async ({ req, query }) => {
   } else if (query.slug && isString(query.slug)) {
     try {
       const category = await http.categoryDetail(query.slug);
-      return {...defaultCategoryState, category: category?.categoryDetail || null}
+      return {...defaultCategoryState, category: category?.category || null}
     } catch (e) {
        return {...defaultCategoryState, error: e.message, category: null}
     }

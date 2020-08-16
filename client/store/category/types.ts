@@ -1,10 +1,12 @@
 import {
-  CategoryDetail_categoryDetail,
-  CategoryDetail
+  Category_category,
+  Category_category_children,
+  Category
 } from '../../types/graphql-types'
 
-export type CategoryDetailType = CategoryDetail_categoryDetail;
-export type CategoryDetailResponseType = CategoryDetail;
+export type CategoryChildrenType = Category_category_children;
+export type CategoryDetailType = Category_category;
+export type CategoryDetailResponseType = Category;
 
 export type CategoryDetailStateType = {
   category: CategoryDetailType|null;

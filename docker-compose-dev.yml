@@ -67,7 +67,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      GRAPHQL_URL: "http://nginx:8080/api"
+      GRAPHQL_URL: "http://nginx:8080/graphql"
 
 networks:
   shop-network:
