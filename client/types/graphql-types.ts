@@ -37,14 +37,14 @@ export interface Category_category_seo {
 
 export interface Category_category_children {
   id: string;
-  heading: string | null;
-  slug: string | null;
+  heading: string;
+  slug: string;
 }
 
 export interface Category_category {
   id: string;
-  heading: string | null;
-  slug: string | null;
+  heading: string;
+  slug: string;
   content: string | null;
   seo: Category_category_seo | null;
   children: Category_category_children[] | null;
@@ -63,11 +63,53 @@ export interface CategoryVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL query operation: Product
+// ====================================================
+
+export interface Product_product_category {
+  id: string;
+  heading: string;
+  slug: string;
+}
+
+export interface Product_product_categoryParents {
+  id: string;
+  heading: string;
+  slug: string;
+}
+
+export interface Product_product {
+  id: string;
+  heading: string;
+  slug: string;
+  price: number | null;
+  price_old: number | null;
+  title: string | null;
+  description: string | null;
+  keywords: string | null;
+  content: string | null;
+  category: Product_product_category;
+  categoryParents: Product_product_categoryParents[];
+}
+
+export interface Product {
+  product: Product_product | null;
+}
+
+export interface ProductVariables {
+  slug: string;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: ProductListPaginator
 // ====================================================
 
 export interface ProductListPaginator_products_data_category {
-  heading: string | null;
+  heading: string;
 }
 
 export interface ProductListPaginator_products_data {

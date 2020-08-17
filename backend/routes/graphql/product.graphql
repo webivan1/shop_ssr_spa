@@ -9,13 +9,14 @@ type ProductList {
 
 type Product {
     id: ID!
-    heading: String
-    slug: String
+    heading: String!
+    slug: String!
     price: Float
     price_old: Float
     title: String
     description: String
     keywords: String
     content: String
-    category: Category @hasOne
+    category: Category! @hasOne,
+    categoryParents: [Category!]! @method(name: "allCategoryParents")
 }

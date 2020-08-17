@@ -15,13 +15,13 @@ const initialState: ProductListStateType = {
 
 export default createReducer(initialState, {
   [action.setData.type]: (state, { payload: { data, paginatorInfo } }: PayloadAction<ProductListPaginatorType>) => {
-    state.data = data;
-    state.paginatorInfo = paginatorInfo;
+    state.data = [...data];
+    state.paginatorInfo = {...paginatorInfo};
     state.error = null;
   },
   [action.appendData.type]: (state, { payload: { data, paginatorInfo } }: PayloadAction<ProductListPaginatorType>) => {
-    state.data = state.data.concat(data);
-    state.paginatorInfo = paginatorInfo;
+    state.data = state.data.concat([...data]);
+    state.paginatorInfo = {...paginatorInfo};
     state.error = null;
   },
   [action.error.type]: (state, { payload }: PayloadAction<string>) => {

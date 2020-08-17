@@ -40,17 +40,17 @@ const CategoryItem: NextPage<CategoryDetailStateType> = (serverProps) => {
     >
       {error ? <Alert variant={'danger'}>{error}</Alert> : null}
 
-      {loader || !category ? <Spinner animation={'grow'} /> : (
+      {loader || !category ? <Spinner animation={'border'} /> : (
         <>
           <h1 className="mb-4">{category.heading}</h1>
 
           <p>{category.content}</p>
 
           <Row className="mt-5">
-            <Col md={3} sm={6} xs={12}>
+            <Col md={3} sm={12} className="mb-sm-4">
               {category.children ? <CategoryChildren children={category.children} /> : null}
             </Col>
-            <Col md={9} sm={6} xs={12}>
+            <Col md={9} sm={12}>
               <ProductList />
             </Col>
           </Row>

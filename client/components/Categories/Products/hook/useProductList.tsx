@@ -28,6 +28,7 @@ export const useProductList = () => {
   }
 
   return {
+    category,
     ...products,
     handlerNextPage,
     handlerSearch

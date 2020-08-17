@@ -14,11 +14,9 @@ export const fetchCategoryDetailAsync = (slug: string): AppThunk => async (dispa
   dispatch(stopFetching())
   try {
     const category = await http.categoryDetail(slug);
-    if (category && category.category) {
-      dispatch(setCategory(category.category));
-    } else {
-      dispatch(error('404 Page not found'))
-    }
+    category.category
+      ? dispatch(setCategory(category.category))
+      : dispatch(error('404 Page not found'));
   } catch (e) {
     dispatch(error(e.message));
   } finally {

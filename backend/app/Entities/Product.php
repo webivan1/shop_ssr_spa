@@ -32,4 +32,9 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
+
+    public function allCategoryParents(): array
+    {
+        return $this->category->allParents();
+    }
 }

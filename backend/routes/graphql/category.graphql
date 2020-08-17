@@ -16,8 +16,8 @@ type CategoryList implements ICategory {
 
 type Category implements ICategory {
     id: ID!
-    heading: String
-    slug: String
+    heading: String!
+    slug: String!
     parent_id: Int
     content: String
     seo: Seo @hasOne

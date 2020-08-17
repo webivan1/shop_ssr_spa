@@ -1,9 +1,11 @@
 import {
   ProductListPaginator_products,
   ProductListPaginator,
-  ProductListPaginatorVariables
+  ProductListPaginatorVariables,
+  ProductListPaginator_products_data
 } from '../../types/graphql-types'
 
+export type ProductListType = ProductListPaginator_products_data;
 export type ProductListPaginatorType = ProductListPaginator_products;
 
 export type ProductListStateType = ProductListPaginator_products & {
